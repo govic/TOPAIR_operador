@@ -1,0 +1,32 @@
+<ion-view view-title="Trabajos" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <a ui-sref="app.proyectos" class="fix-boton-atras-customizado">
+      <i class="icon ion-chevron-left"></i>
+    </a>
+  </ion-nav-buttons>
+  <ion-content class="has-footer padding">
+    <ion-refresher pulling-text="Actualizar ..." on-refresh="cargar()"></ion-refresher>
+    <ion-list>
+      <ion-item class="item-icon-right" ng-click="nueva_actividad()">
+        <h1>Nuevo trabajo</h1>
+        <i class="icon ion-chevron-right"></i>
+      </ion-item>
+    </ion-list>
+    <br>
+    <br>
+    <ion-list ng-show="model.pendientes.length > 0">
+      <ion-item>
+        <h1>Pendientes</h1>
+      </ion-item>
+      <ion-item class="item-icon-right" ng-repeat="pendiente in model.pendientes" ui-sref="app.confirmar({actividadId:pendiente.actividad})">
+        <small>Pendiente desde: {{(pendiente.fecha_ingreso) | date:'dd/MM/yyyy HH:mm'}}</small>
+        <p class="texto_detalle_pendiente">Equipo: {{pendiente.equipo ? pendiente.equipo.nombre : 'Sin asignar'}}</p>
+        <p class="texto_detalle_pendiente">Ubicación: {{pendiente.ubicacion ? pendiente.ubicacion.nombre : 'Sin asignar'}}</p>
+        <i class="icon ion-chevron-right"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-dark">
+    <h1 class="title">Topair © 2016</h1>
+  </ion-footer-bar>
+</ion-view>

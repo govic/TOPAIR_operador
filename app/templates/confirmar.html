@@ -1,0 +1,40 @@
+<ion-view view-title="Confirmar" hide-back-button="true">
+  <ion-content class="padding">
+    <ion-refresher pulling-text="Actualizar ..." on-refresh="cargar()"></ion-refresher>
+    <ion-list>
+      <ion-item class="item-icon-right item-balanced" ng-click="confirmar()" ng-show="!existen_mensajes()">
+        <h1 class="light">Enviar</h1>
+        <i class="icon ion-checkmark-round"></i>
+      </ion-item>
+      <ion-item class="item-icon-right" ng-click="revisar()">
+        <h1>Revisar</h1>
+        <i class="icon ion-compose"></i>
+      </ion-item>
+      <ion-item ng-show="existen_mensajes()">
+        <h2>Ops! Algunos datos no se han completado:</h2>
+        <br>
+        <ul>
+          <li ng-show="model.mensajes.generales.length > 0"><strong>Generales</strong></li>
+          <li ng-repeat="item in model.mensajes.generales">{{item}}</li>
+          <li ng-show="model.mensajes.etapa_datos.length > 0"><strong>Motivo y equipo</strong> | <a ui-sref="app.etapa_datos({actividadId:model.actividad.actividad})">Revisar</a></li>
+          <li ng-repeat="item in model.mensajes.etapa_datos">{{item}}</li>
+          <li ng-show="model.mensajes.etapa_parametros.length > 0"><strong>Parámetros</strong> | <a ui-sref="app.etapa_parametros({actividadId:model.actividad.actividad})">Revisar</a></li>
+          <li ng-repeat="item in model.mensajes.etapa_parametros">{{item}}</li>
+          <li ng-show="model.mensajes.etapa_estado_inicial.length > 0"><strong>Estado incial equipo</strong> | <a ui-sref="app.etapa_estado_inicial({actividadId:model.actividad.actividad})">Revisar</a></li>
+          <li ng-repeat="item in model.mensajes.etapa_estado_inicial">{{item}}</li>
+          <li ng-show="model.mensajes.etapa_trabajos_realizados.length > 0"><strong>Trabajos realizados</strong> | <a ui-sref="app.etapa_trabajos_realizados({actividadId:model.actividad.actividad})">Revisar</a></li>
+          <li ng-repeat="item in model.mensajes.etapa_trabajos_realizados">{{item}}</li>
+          <li ng-show="model.mensajes.etapa_recomendaciones.length > 0"><strong>Recomendaciones</strong> | <a ui-sref="app.etapa_recomendaciones({actividadId:model.actividad.actividad})">Revisar</a></li>
+          <li ng-repeat="item in model.mensajes.etapa_recomendaciones">{{item}}</li>
+        </ul>
+      </ion-item>
+      <ion-item class="item-icon-right" ng-click="descartar()" ng-show="model.actividad.es_nueva">
+        <h1>Eliminar</h1>
+        <i class="icon ion-trash-a"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-dark">
+    <h1 class="title">Topair © 2016</h1>
+  </ion-footer-bar>
+</ion-view>

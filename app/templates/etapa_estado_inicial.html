@@ -1,0 +1,30 @@
+<ion-view view-title="Estado inicial equipo" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <!-- <a ui-sref="app.etapa_parametros({actividadId:model.actividad})" class="fix-boton-atras-customizado"> -->
+    <a ui-sref="app.etapa_datos({actividadId:model.actividad})" class="fix-boton-atras-customizado">
+      <i class="icon ion-chevron-left"></i>
+    </a>
+  </ion-nav-buttons>
+  <ion-content class="padding has-footer">
+    <ion-refresher pulling-text="Actualizar ..." on-refresh="cargar()"></ion-refresher>
+    <ion-list>
+      <ion-item>
+        <h1>Estado inicial equipo</h1>
+      </ion-item>
+      <ion-item class="item-input">
+        <textarea class="textarea-descripcion" ng-model="model.estado_inicial.texto" placeholder="Ingrese una descripción"></textarea>
+      </ion-item>
+      <ion-item class="item-icon-right" ng-click="tomar_foto(1)" ng-hide="model.estado_inicial.foto">
+        <p class="label-foto"><strong>Foto 1</strong></p>
+        <i class="icon ion-camera"></i>
+      </ion-item>
+      <ion-item class="item-icon-right item-thumbnail-left" ng-show="model.estado_inicial.foto">
+        <img src="data:image/jpeg;base64,{{model.estado_inicial.foto}}">
+        <i class="icon ion-close-round" ng-click="model.estado_inicial.foto = undefined"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-balanced" ng-click="siguiente()">
+    <h1 class="title">Siguiente</h1>
+  </ion-footer-bar>
+</ion-view>

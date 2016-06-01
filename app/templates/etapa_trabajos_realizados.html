@@ -1,0 +1,39 @@
+<ion-view view-title="Trabajos realizados" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <!-- <a ui-sref="app.etapa_estado_inicial({actividadId:model.actividad})" class="fix-boton-atras-customizado"> -->
+    <a ui-sref="app.etapa_parametros({actividadId:model.actividad})" class="fix-boton-atras-customizado">
+      <i class="icon ion-chevron-left"></i>
+    </a>
+  </ion-nav-buttons>
+  <ion-content class="padding has-footer">
+    <ion-refresher pulling-text="Actualizar ..." on-refresh="cargar()"></ion-refresher>
+    <ion-list>
+      <ion-item>
+        <h1>Trabajos realizados</h1>
+      </ion-item>
+      <ion-item class="item-input">
+        <textarea class="textarea-descripcion" ng-model="model.trabajos_realizados.texto" placeholder="Ingrese una descripción"></textarea>
+      </ion-item>
+      <ion-item class="item-icon-right" ng-click="tomar_foto()" ng-hide="model.trabajos_realizados.foto">
+        <h1>Foto</h1>
+        <i class="icon ion-camera"></i>
+      </ion-item>
+      <ion-item class="item-icon-right item-thumbnail-left" ng-show="model.trabajos_realizados.foto">
+        <img src="data:image/jpeg;base64,{{model.trabajos_realizados.foto}}">
+        <i class="icon ion-close-round" ng-click="model.trabajos_realizados.foto = undefined"></i>
+      </ion-item>
+    </ion-list>
+    <br>
+    <ion-list>
+      <ion-item>
+        <h1>Check trabajos</h1>
+      </ion-item>
+      <ion-list ng-show="model.trabajos && model.trabajos.length > 0">
+        <ion-checkbox name="radio_equipos" ng-model="item.checked" ng-repeat="item in model.trabajos" ng-value="item">{{item.nombre}}</ion-checkbox>
+      </ion-list>
+    </ion-list>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-balanced" ng-click="siguiente()">
+    <h1 class="title">Siguiente</h1>
+  </ion-footer-bar>
+</ion-view>

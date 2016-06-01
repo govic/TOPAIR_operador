@@ -1,0 +1,21 @@
+<ion-view view-title="Recomendaciones" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <a ui-sref="app.etapa_trabajos_realizados({actividadId:model.actividad})" class="fix-boton-atras-customizado">
+      <i class="icon ion-chevron-left"></i>
+    </a>
+  </ion-nav-buttons>
+  <ion-content class="padding has-footer">
+    <ion-refresher pulling-text="Actualizar ..." on-refresh="cargar()"></ion-refresher>
+    <ion-list>
+      <ion-item>
+        <h1>Recomendaciones</h1>
+      </ion-item>
+      <ion-item class="item-input">
+        <textarea class="textarea-descripcion" ng-model="model.recomendaciones.texto" placeholder="Ingrese una descripción"></textarea>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-balanced" ng-click="siguiente()">
+    <h1 class="title">Siguiente</h1>
+  </ion-footer-bar>
+</ion-view>

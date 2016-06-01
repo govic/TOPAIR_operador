@@ -1,0 +1,90 @@
+.img-detalle-registro {
+  width: 100%;
+  height: auto;
+}
+
+.login-logo-topair {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  height: 8em;
+  width: auto;
+}
+
+.fix-boton-atras-customizado {
+  padding: 3px 0px 3px 0px !important;
+  width: 3em !important;
+  color: white;
+}
+
+.fix-boton-atras-customizado:visited {
+  color: white;
+}
+
+.fix-boton-atras-customizado i {
+  font-size: 2em;
+}
+
+.titulo-pregunta {
+  font-size: 1.5em !important;
+}
+
+.textarea-descripcion {
+  height: 10em !important;
+  font-size: 1.2em !important;
+}
+
+.icono-grande-centrado {
+  margin: 0 auto;
+  width: 10.2em;
+}
+
+.icono-grande-centrado i {
+  font-size: 10em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.texto_detalle_pendiente {
+  font-size: 1.3em !important;
+}
+
+.boton-siguiente-arriba {
+  font-size: 2em !important;
+  height: 2em !important;
+}
+
+.opcion-menu {
+  font-size: 1.5em !important;
+}
+
+.opcion-menu-enviar {
+  font-size: 3em !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.sin-padding {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.sin-padding .col {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+ion-content {
+  background-color: #F8F8F8 !important;
+}
+
+.label-foto {
+  font-size: 1.5em !important;
+  color: black !important;
+}

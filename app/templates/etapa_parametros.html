@@ -1,0 +1,87 @@
+<ion-view view-title="Parámetros" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <!-- <a ui-sref="app.etapa_datos({actividadId:model.actividad})" class="fix-boton-atras-customizado"> -->
+    <a ui-sref="app.etapa_estado_inicial({actividadId:model.actividad})" class="fix-boton-atras-customizado">
+      <i class="icon ion-chevron-left"></i>
+    </a>
+  </ion-nav-buttons>
+  <ion-content class="padding has-footer">
+    <ion-refresher pulling-text="Actualizar ..." on-refresh="cargar()"></ion-refresher>
+    <ion-list>
+      <ion-item>
+        <h1>Parametros</h1>
+      </ion-item>
+    </ion-list>
+    <div class="row sin-padding">
+      <div class="col">
+        <div class="list">
+          <div class="item">
+            <strong>C. Compresor N1</strong>
+          </div>
+          <label class="item item-input">
+            <span class="input-label">R</span>
+            <input name="compresor_n1_r" type="number" ng-model="model.parametros.compresor_n1_r">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">S</span>
+            <input name="compresor_n1_s" type="number" ng-model="model.parametros.compresor_n1_s">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">T</span>
+            <input name="compresor_n1_t" type="number" ng-model="model.parametros.compresor_n1_t">
+          </label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="list">
+          <div class="item">
+            <strong>C. Compresor N2</strong>
+          </div>
+          <label class="item item-input">
+            <span class="input-label">R</span>
+            <input name="compresor_n2_r" type="number" ng-model="model.parametros.compresor_n2_r">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">S</span>
+            <input name="compresor_n2_s" type="number" ng-model="model.parametros.compresor_n2_s">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">T</span>
+            <input name="compresor_n2_t" type="number" ng-model="model.parametros.compresor_n2_t">
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row sin-padding">
+      <div class="col">
+        <label class="item item-input">
+          <strong class="input-label">P. Succión</strong>
+          <input name="p_succion" type="number" ng-model="model.parametros.p_succion">
+        </label>
+        <label class="item item-input">
+          <strong class="input-label">P. Descarga</strong>
+          <input name="p_descarga" type="number" ng-model="model.parametros.p_descarga">
+        </label>
+        <label class="item item-input">
+          <strong class="input-label">T. Inyección</strong>
+          <input name="t_inyeccion" type="number" ng-model="model.parametros.t_inyeccion">
+        </label>
+        <label class="item item-input">
+          <strong class="input-label">T. Retorno</strong>
+          <input name="t_retorno" type="number" ng-model="model.parametros.t_retorno">
+        </label>
+        <label class="item item-input">
+          <strong class="input-label">T. Ambiente</strong>
+          <input name="t_ambiente" type="number" ng-model="model.parametros.t_ambiente">
+        </label>
+        <label class="item item-input">
+          <strong class="input-label">T. Exterior</strong>
+          <input name="t_exterior" type="number" ng-model="model.parametros.t_exterior">
+        </label>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-balanced" ng-click="siguiente()">
+    <h1 class="title">Siguiente</h1>
+  </ion-footer-bar>
+</ion-view>

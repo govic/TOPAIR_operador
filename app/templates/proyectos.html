@@ -1,0 +1,22 @@
+<ion-view view-title="Contratos" hide-back-button="true">
+  <ion-content class="padding">
+    <ion-refresher pulling-text="Actualizar ..." on-refresh="cargar()"></ion-refresher>
+    <ion-list>
+      <ion-item ng-show="model.proyectos.length === 0">
+        <strong>Sin contratos asociados</strong>
+      </ion-item>
+      <ion-item class="item-icon-right" ng-repeat="proyecto in model.proyectos" ui-sref="app.actividades({proyectoId: proyecto._id})">
+        <h1>{{proyecto.cliente.nombre}}</h1>
+        <h2><strong>{{proyecto.nombre}}</strong></h2>
+        <p ng-show="proyecto.fecha_creacion"><span class="ion-calendar"></span> {{proyecto.fecha_creacion | date:'dd/MM/yyyy HH:mm'}}</p>
+        <p ng-show="proyecto.cliente.contacto"><span class="ion-person"></span> {{proyecto.cliente.contacto}}</p>
+        <p ng-show="proyecto.cliente.telefono"><span class="ion-ios-telephone"></span> {{proyecto.cliente.telefono}}</p>
+        <p ng-show="proyecto.cliente.direccion"><span class="ion-location"></span> {{proyecto.cliente.direccion}}</p>
+        <i class="icon ion-chevron-right"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <ion-footer-bar align-title="left" class="bar-dark">
+    <h1 class="title">Topair © 2016</h1>
+  </ion-footer-bar>
+</ion-view>
