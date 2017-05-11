@@ -44,7 +44,7 @@ module.exports = function(grunt) {
           ENV: {
             name: 'development',
             // apiEndpoint: 'http://localhost:9000'
-            apiEndpoint: 'http://pcmtopair-62386.onmodulus.net'
+            apiEndpoint: 'https://topairadministrador-2851.nodechef.com'
           },
           OpcionesCamara: {
             allowEdit: false,
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
         constants: {
           ENV: {
             name: 'production',
-            apiEndpoint: 'http://pcmtopair-62386.onmodulus.net'
+            apiEndpoint: 'https://topairadministrador-2851.nodechef.com'
           },
           OpcionesCamara: {
             allowEdit: false,
