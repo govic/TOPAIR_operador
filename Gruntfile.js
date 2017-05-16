@@ -43,8 +43,8 @@ module.exports = function(grunt) {
         constants: {
           ENV: {
             name: 'development',
-            // apiEndpoint: 'http://localhost:9000'
-            apiEndpoint: 'https://topairadministrador-2851.nodechef.com'
+            apiEndpoint: 'http://localhost:9000'
+            // apiEndpoint: 'https://topairadministrador-2851.nodechef.com'
           },
           OpcionesCamara: {
             allowEdit: false,
@@ -62,7 +62,8 @@ module.exports = function(grunt) {
         constants: {
           ENV: {
             name: 'production',
-            apiEndpoint: 'https://topairadministrador-2851.nodechef.com'
+            apiEndpoint: 'http://localhost:9000'
+            // apiEndpoint: 'https://topairadministrador-2851.nodechef.com'
           },
           OpcionesCamara: {
             allowEdit: false,
