@@ -43,8 +43,9 @@ module.exports = function(grunt) {
         constants: {
           ENV: {
             name: 'development',
-            apiEndpoint: 'http://localhost:9000'
+            // apiEndpoint: 'http://localhost:9000'
             // apiEndpoint: 'https://topairadministrador-2851.nodechef.com'
+            apiEndpoint: 'https://pcmtopair.herokuapp.com'
           },
           OpcionesCamara: {
             allowEdit: false,
@@ -62,8 +63,9 @@ module.exports = function(grunt) {
         constants: {
           ENV: {
             name: 'production',
-            apiEndpoint: 'http://localhost:9000'
+            // apiEndpoint: 'http://localhost:9000'
             // apiEndpoint: 'https://topairadministrador-2851.nodechef.com'
+            apiEndpoint: 'https://pcmtopair.herokuapp.com'
           },
           OpcionesCamara: {
             allowEdit: false,
